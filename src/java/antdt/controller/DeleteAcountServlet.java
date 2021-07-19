@@ -49,9 +49,12 @@ public class DeleteAcountServlet extends HttpServlet {
         String url = map.get("searchPageJSP");
 
         DeleteAccountErrors deleteAccountErrors = new DeleteAccountErrors();
+        HttpSession session = request.getSession();
+        session.removeAttribute("DELETE_ACCOUNT");
+        session.removeAttribute("UPDATE_ACCOUNT");
+        
 
         try {
-            HttpSession session = request.getSession();
             RegistrationDTO dto = (RegistrationDTO) session.getAttribute("DTO");
             session.setAttribute("DELETE_ACCOUNT", deleteAccountErrors);
 

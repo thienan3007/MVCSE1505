@@ -47,7 +47,7 @@ public class SearchLastNameServlet extends HttpServlet {
 
         String searchValue = request.getParameter("txtSearchValue");
 
-        String url = map.get("searchPage");
+        String url = map.get("searchPageJSP");
 
         try {
             HttpSession session = request.getSession();

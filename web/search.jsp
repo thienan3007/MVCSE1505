@@ -77,7 +77,7 @@
                                 </td>
                                 <td>
                                     <c:url var="deleteLink" value="delete">
-                                        <c:param name="btnAction" value="delete"/>
+                                        <%--<c:param name="btnAction" value="delete"/>--%>
                                         <c:param name="pk" value="${dto.username}"/>
                                         <c:param name="keyword" value="${searchValue}"/>
                                     </c:url>

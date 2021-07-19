@@ -44,9 +44,11 @@ public class UpdateAcountServlet extends HttpServlet {
         boolean foundError = false;
         RegistrationCreateErrors createErrors = new RegistrationCreateErrors();
         String url = map.get("searchPageJSP");
+        HttpSession session = request.getSession();
+        session.removeAttribute("DELETE_ACCOUNT");
+        session.removeAttribute("UPDATE_ACCOUNT");
         try {
             
-            HttpSession session = request.getSession();
             session.setAttribute("UPDATE_ACCOUNT", createErrors);
             
             if (password.trim().length() < 6 || password.trim().length() > 20) {
